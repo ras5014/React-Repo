@@ -1,57 +1,22 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/home";
+import DataFetching from "./pages/data-fetching";
+import UseRef from "./pages/react-hooks/use-ref";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [error, setError] = useState<unknown>(null);
-
-  const fetchPosts = async () => {
-    try {
-      setIsLoading(true);
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts?_page=1&_limit=10"
-      );
-      const posts = (await response.json()) as Post[];
-      setPosts(posts);
-    } catch (error) {
-      console.error("Error fetching posts:", error);
-      setError(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (error) {
-    return (
-      <h1>
-        Error fetching posts:{" "}
-        {error instanceof Error ? error.message : "Unknown error"}
-      </h1>
-    );
-  }
-
   return (
-    <div className="">
-      <h1>Data fetching in React</h1>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.id}>
-              <h2>{post.title}</h2>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <Router>
+      <div className="page-container">
+        <h1 className="heading">
+          <Link to="/">Welcome to React Tutorials</Link>
+        </h1>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/data-fetching" element={<DataFetching />} />
+        <Route path="/use-refs" element={<UseRef />} />
+      </Routes>
+    </Router>
   );
 }
 
