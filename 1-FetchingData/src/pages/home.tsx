@@ -11,6 +11,12 @@ const Home = () => {
         <Link className="box" to="/use-refs">
           useRefs
         </Link>
+        <Link className="box" to="/react-keys">
+          React Keys
+        </Link>
+        <Link className="box" to="/react-query">
+          React Query
+        </Link>
       </div>
     </div>
   );
