@@ -2,9 +2,8 @@
  1. Loading state
  2. Error state
  3. Data state
- 4. Pagination state
- We will use useState and useEffect hooks to manage these states.
- 5. We also need to handle race conditions,
+ 4. Cache data
+ 5. Race conditions,
     - Which will occur when multiple requests are made to the server. 
     - Scenario: If a user clicks on the next button multiple times,
       and while the first page api is fetching user clicked on next and now 2nd page loaded
@@ -13,6 +12,8 @@
     - To handle this,
       We need to ensure that only the latest request is processed.
       We do that by using useRef
+  6. Pagination state
+     We will use useState and useEffect hooks to manage these states.
 */
 
 import { useEffect, useState } from "react";

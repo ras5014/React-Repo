@@ -1,12 +1,8 @@
-export const fetchTodos = async () => {
+export const fetchTodos = async (page: number) => {
   const response = await fetch(
-    "https://jsonplaceholder.typicode.com/todos?_page=1&_limit=10"
+    `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`
   );
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  const todos = await response.json();
-  return todos;
+  return await response.json();
 };
 
 export const addTodo = async (todo: { title: string }) => {

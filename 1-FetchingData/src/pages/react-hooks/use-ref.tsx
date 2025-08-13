@@ -20,7 +20,7 @@ const UseRef = () => {
   }, []);
 
   const handleClick = () => {
-    // setCount((prevCount) => prevCount + 1);
+    // setCount((prevCount) => prevCount + 1); // i.e no rerenders, so useRef won't update
     countRef.current = count + 1;
     console.log("State: ", count);
     console.log("Ref: ", countRef.current);
