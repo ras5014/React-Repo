@@ -1,7 +1,5 @@
 /*
   1. For ReactQuery Setup please look into main.tsx file
-  2. For queryFn do not add any error handling logic, just call api and return.
-     Error will be handled by React Query
 */
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -28,7 +26,7 @@ const ReactQuery = () => {
     isError,
   } = useQuery({
     queryFn: () => fetchTodos(page), // Every parameter that goes into queryFn should go to queryKey also to maintain the specific cache
-    queryKey: ["todos", { page }],
+    queryKey: ["todos", { page }], // See React Query Dev tools to understand this
     staleTime: 1000 * 60 * 5, // 5 minutes
     retry: 2,
   });
@@ -36,11 +34,14 @@ const ReactQuery = () => {
   // adding todos
   const [input, setInput] = useState<string>("");
 
+  /* Follow React Query Docs, But use mutations this way by destructuring,
+     because if there will be more post functions then we need to alias each mutateAsync
+  */
   const { mutateAsync: addTodoMutation } = useMutation({
     mutationFn: addTodo,
     onSuccess: () => {
       // Invalidate todos
-      queryClient.invalidateQueries(["todos"]);
+      queryClient.invalidateQueries(["todos"]); // See network tab, to observe what api is called
     },
   });
 
