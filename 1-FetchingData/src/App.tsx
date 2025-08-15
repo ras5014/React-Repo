@@ -4,6 +4,7 @@ import DataFetching from "./pages/data-fetching";
 import UseRef from "./pages/react-hooks/use-ref";
 import ReactKeys from "./pages/react-keys";
 import ReactQuery from "./pages/react-query";
+import CypressTest from "./pages/cypress-test";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/use-refs" element={<UseRef />} />
         <Route path="/react-keys" element={<ReactKeys />} />
         <Route path="/react-query" element={<ReactQuery />} />
+        <Route path="/cypress-test" element={<CypressTest />} />
       </Routes>
     </Router>
   );

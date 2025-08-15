@@ -17,6 +17,9 @@ const Home = () => {
         <Link className="box" to="/react-query">
           React Query
         </Link>
+        <Link className="box" to="/cypress-test">
+          Cypress Test
+        </Link>
       </div>
     </div>
   );
