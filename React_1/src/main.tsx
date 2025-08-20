@@ -16,9 +16,15 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
+// Redux Setup
+import { Provider } from "react-redux";
+import { store } from "./state/store.ts";
+
 createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
     <ReactQueryDevtools initialIsOpen={false} />
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </QueryClientProvider>
 );

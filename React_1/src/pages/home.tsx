@@ -20,6 +20,9 @@ const Home = () => {
         <Link className="box" to="/cypress-test">
           Cypress Test
         </Link>
+        <Link className="box" to="/redux-counter">
+          Redux Counter
+        </Link>
       </div>
     </div>
   );

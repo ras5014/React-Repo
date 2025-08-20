@@ -5,6 +5,7 @@ import UseRef from "./pages/react-hooks/use-ref";
 import ReactKeys from "./pages/react-keys";
 import ReactQuery from "./pages/react-query";
 import CypressTest from "./pages/cypress-test";
+import ReduxCounter from "./pages/redux-counter";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/react-keys" element={<ReactKeys />} />
         <Route path="/react-query" element={<ReactQuery />} />
         <Route path="/cypress-test" element={<CypressTest />} />
+        <Route path="/redux-counter" element={<ReduxCounter />} />
       </Routes>
     </Router>
   );

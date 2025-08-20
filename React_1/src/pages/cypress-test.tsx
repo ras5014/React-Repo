@@ -18,7 +18,9 @@ const todos = [
 export default function CypressTest() {
   return (
     <div className="page-container">
-      <h1 data-testid="cypress-test">Cypress Test</h1>
+      <h1 data-testid="cypress-test" className="headline">
+        Cypress Test
+      </h1>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id} data-testid={`todo-${todo.id}`}>
