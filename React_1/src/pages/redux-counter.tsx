@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 // Getting the redux actions
 import {
@@ -7,10 +6,13 @@ import {
   incrementByAmount,
 } from "../state/counter/counterSlice";
 
+// TypeScript addition to specify type for the global state
+import type { RootState } from "../state/store";
+
 export default function ReduxCounter() {
   // Accessing the state value using useSelector
   // The state is the global state managed by Redux
-  const count = useSelector((state) => state.counter.value);
+  const count = useSelector((state: RootState) => state.counter.value);
   // Dispatch is needed to perform actions
   const dispatch = useDispatch();
 
