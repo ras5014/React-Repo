@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -22,6 +21,12 @@ const Home = () => {
         </Link>
         <Link className="box" to="/redux-counter">
           Redux Counter
+        </Link>
+        <Link className="box" to="/simple-forms">
+          Simple Forms
+        </Link>
+        <Link className="box" to="/react-hook-form">
+          React Hook Form
         </Link>
       </div>
     </div>

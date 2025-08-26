@@ -6,25 +6,33 @@ import ReactKeys from "./pages/react-keys";
 import ReactQuery from "./pages/react-query";
 import CypressTest from "./pages/cypress-test";
 import ReduxCounter from "./pages/redux-counter";
+import SimpleForms from "./pages/react-forms/simple-forms";
+import { Toaster } from "react-hot-toast";
+import ReactHookForm from "./pages/react-forms/react-hook-form";
 
 function App() {
   return (
-    <Router>
-      <div className="page-container">
-        <h1 className="heading">
-          <Link to="/">Welcome to React Tutorials</Link>
-        </h1>
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/data-fetching" element={<DataFetching />} />
-        <Route path="/use-refs" element={<UseRef />} />
-        <Route path="/react-keys" element={<ReactKeys />} />
-        <Route path="/react-query" element={<ReactQuery />} />
-        <Route path="/cypress-test" element={<CypressTest />} />
-        <Route path="/redux-counter" element={<ReduxCounter />} />
-      </Routes>
-    </Router>
+    <>
+      <Toaster />
+      <Router>
+        <div className="page-container">
+          <h1 className="heading">
+            <Link to="/">Welcome to React Tutorials</Link>
+          </h1>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/data-fetching" element={<DataFetching />} />
+          <Route path="/use-refs" element={<UseRef />} />
+          <Route path="/react-keys" element={<ReactKeys />} />
+          <Route path="/react-query" element={<ReactQuery />} />
+          <Route path="/cypress-test" element={<CypressTest />} />
+          <Route path="/redux-counter" element={<ReduxCounter />} />
+          <Route path="/simple-forms" element={<SimpleForms />} />
+          <Route path="/react-hook-form" element={<ReactHookForm />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

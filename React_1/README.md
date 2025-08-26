@@ -14,3 +14,4 @@
         - Reducer
 
     - https://redux-toolkit.js.org/tutorials/quick-start
+    - Do the JS part first then add TS
