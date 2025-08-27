@@ -29,7 +29,7 @@ export default function ReactHookForm() {
         defaultValues: {
             email: 'm@example.com'
         },
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schema) // All the validation errors you see will be handled by Zod Resolver
     }); // Can have inputs of type LoginFormFields
 
     // Submit Function
