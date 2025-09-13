@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Layout />, // Go to this component to understand layout (Use Outlet to achieve this)
     children: [
       {
-        index: true,
+        index: true, // This will match the root path (/) and render the HomePage component
         element: <HomePage />,
         /* This will be shown if n o other routes match 
             - If you want only one not found page for the entire application, 
